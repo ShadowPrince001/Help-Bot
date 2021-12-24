@@ -1,0 +1,15 @@
+from datetime import datetime
+
+Username=input("May I have your name please? \n")
+def greet_user():
+    """Greets the user according to the time"""
+    
+    hour = datetime.now().hour
+    if (hour >= 4) and (hour < 12):
+        print("Good Morning ",(Username),".")
+    elif (hour >= 12) and (hour < 16):
+        print("Good Afternoon ",(Username),".")
+    elif (hour >= 16) and (hour <24 ):
+        print("Good Evening ",(Username),".")
+    print("I am Jarvis. How may I assist you?")
+greet_user()
