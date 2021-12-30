@@ -2,6 +2,10 @@ import utils
 from datetime import datetime
 from utils import open_calculator, open_camera, open_cmd, open_notepad
 from info import opening_text, path
+import random 
+
+import os
+import subprocess as sp
 
 
 def greet_user():
