@@ -43,7 +43,7 @@ def take_user_input():
         print(choice(opening_text))  
     return query
 
-Username=input("May I have your name please? \n")
+username=input("May I have your name please? \n")
 greet_user()
 take_user_input()
 
