@@ -1,0 +1,10 @@
+opening_text = [
+    "Cool, I'm on it sir.",
+    "Okay sir, I'm working on it.",
+    "Just a second sir.",
+     ]
+
+paths = {
+    'notepad': "C:\\Program Files\\Notepad++\\notepad++.exe",
+    'calculator': "C:\\Windows\\System32\\calc.exe"
+     }
