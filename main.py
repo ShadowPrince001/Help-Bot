@@ -35,7 +35,7 @@ def take_user_input():
             open_camera()
         elif "calculator" in open_task:
             open_calculator()
-        elif "command prompt" in open_task:
+        elif "command prompt" or "cmd"in open_task:
             open_cmd()
         elif "notepad" in open_task:
             open_notepad()
