@@ -1,7 +1,7 @@
 import utils
 from datetime import datetime
 from utils import open_calculator, open_camera, open_cmd, open_notepad
-from info import opening_text, path
+from info import opening_text, paths
 import random 
 
 import os
@@ -12,15 +12,14 @@ def greet_user():
     """Greets the user according to the time"""
     
     hour = datetime.now().hour
-    if (hour >= 4) and (hour < 12):
+    if (hour >= 0) and (hour < 12):
         print("Good Morning Mr.",(Username),".")
     elif (hour >= 12) and (hour < 16):
         print("Good Afternoon Mr.",(Username),".")
     elif (hour >= 16) and (hour <24 ):
         print("Good Evening Mr.",(Username),".")
 
-def take_user_input:
-    """Takes user input"""
+def take_user_input():
     query = input("I am Jarvis. How may I assist you? \n")
     if "exit" in query or "stop" in query:
         hour = datetime.now().hour
@@ -41,10 +40,10 @@ def take_user_input:
         elif "notepad" in open_task:
             open_notepad()
     else:
-        print(inform)  
+        print(choice(opening_text))  
     return query
 
 Username=input("May I have your name please? \n")
 greet_user()
-take_user_input
+take_user_input()
 
