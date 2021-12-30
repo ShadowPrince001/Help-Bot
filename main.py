@@ -1,8 +1,8 @@
 import utils
 from datetime import datetime
 from utils import open_calculator, open_camera, open_cmd, open_notepad
-from info import opening_text, path, inform
-from pprint import pprint
+from info import opening_text, path
+
 
 def greet_user():
     """Greets the user according to the time"""
