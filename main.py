@@ -20,7 +20,7 @@ def greet_user():
         print("Good Evening Mr.",(Username),".")
 
 def take_user_input():
-    query = input("I am Jarvis. How may I assist you? \n")
+    query = input("I am AVA. How may I assist you? \n")
     if "exit" in query or "stop" in query:
         hour = datetime.now().hour
         if hour >= 21 and hour < 6:
