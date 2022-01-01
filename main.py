@@ -13,11 +13,11 @@ def greet_user():
     
     hour = datetime.now().hour
     if (hour >= 0) and (hour < 12):
-        print("Good Morning Mr.",(Username),".")
+        print("Good Morning Mr.",(username),".")
     elif (hour >= 12) and (hour < 16):
-        print("Good Afternoon Mr.",(Username),".")
+        print("Good Afternoon Mr.",(username),".")
     elif (hour >= 16) and (hour <24 ):
-        print("Good Evening Mr.",(Username),".")
+        print("Good Evening Mr.",(username),".")
 
 def take_user_input():
     query = input("I am AVA. How may I assist you? \n")
@@ -40,7 +40,7 @@ def take_user_input():
         elif "notepad" in open_task:
             open_notepad()
     else:
-        print(choice(opening_text))  
+        print(random.choice(opening_text))  
     return query
 
 username=input("May I have your name please? \n")
