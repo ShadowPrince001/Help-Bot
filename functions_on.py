@@ -11,7 +11,7 @@ def find_my_ip():
 
 
 def search_on_wikipedia(query):
-    results = wikipedia.summary(query, sentences=2)
+    results = wikipedia.summary(query, sentences=3)
     return results
 
 
