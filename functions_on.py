@@ -22,8 +22,6 @@ def send_whatsapp_message(number, message):
     kit.sendwhatmsg_instantly(f"+91{number}", message)
 
 def send_email(receiver_address, subject, message):
-    useremail=input("Please input your EMAIL Address-/n")
-    password = input("Please input your EMAIL password-/n")
     try:
         email = EmailMessage()
         email['To'] = receiver_address
@@ -44,7 +42,6 @@ def send_email(receiver_address, subject, message):
 
 
 def get_latest_news():
-    news_api_key = input("Please signup for NEWSAPI in https://newsapi.org/register and enter the API key -/n")
     news_headlines = []
     res = requests.get(
         f"https://newsapi.org/v2/top-headlines?country=in&apiKey={news_api_key}&category=general").json()
@@ -54,7 +51,6 @@ def get_latest_news():
     return news_headlines[:5]
 
 def get_weather_report(city):
-    openweather_app_id = input("Please signup for OpenWeatherMap API  in https://home.openweathermap.org/users/sign_in and enter the API key -/n")
     res = requests.get(
         f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={openweather_app_id}&units=metric").json()
     weather = res["weather"][0]["main"]
