@@ -1,5 +1,5 @@
-import functions_of
-import functions_on
+from functions_on import find_my_ip, get_latest_news, get_random_advice, get_random_joke, get_trending_movies, get_weather_report, play_on_youtube, search_on_google, search_on_wikipedia, send_email, send_whatsapp_message
+from functions_of import open_calculator, open_camera, open_cmd, open_notepad, current_time, timezone_time
 from datetime import datetime
 import pytz
 from info import opening_text, paths
