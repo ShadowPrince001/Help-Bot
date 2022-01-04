@@ -1,12 +1,12 @@
 import utils
 from datetime import datetime
-from utils import open_calculator, open_camera, open_cmd, open_notepad
+from functions_of import open_calculator, open_camera, open_cmd, open_notepad
 from info import opening_text, paths
 import random
 
 import os
 import subprocess as sp
-
+import pprint
 
 def greet_user():
     """Greets the user according to the time"""
@@ -46,7 +46,75 @@ if __name__ == "__main__":
             open_cmd()
         elif "open notepad" in query:
             open_notepad()
+        elif 'ip address' in query:
+            ip_address = find_my_ip()
+            print('Your IP Address is {ip_address}')
+
+        elif 'wikipedia' in query:
+            print('What do you want to search on Wikipedia, sir?')
+            search_query = take_user_input().lower()
+            results = search_on_wikipedia(search_query)
+            print("According to Wikipedia, {results}")
+            
+        elif 'youtube' in query:
+            print('What do you want to play on Youtube, sir?')
+            video = take_user_input().lower()
+            play_on_youtube(video)
+
+        elif 'search on google' in query:
+            print('What do you want to search on Google, sir?')
+            query = take_user_input().lower()
+            search_on_google(query)
+
+        elif "send whatsapp message" in query:
+            number = input("On what number should I send the message sir? /n Enter the number: ")
+            print("What is the message sir?")
+            message = take_user_input().lower()
+            send_whatsapp_message(number, message)
+            print("I've sent the message sir.")
+
+        elif "send an email" in query:
+            useremail=input("Please input your EMAIL Address-/n")
+            password = input("Please input your EMAIL password-/n")
+            receiver_address = input(""On what email address do I send sir? Enter email address: ")
+            print("What should be the subject sir?")
+            subject = take_user_input().capitalize()
+            print("What is the message sir?")
+            message = take_user_input().capitalize()
+            if send_email(receiver_address, subject, message):
+                print("I've sent the email sir.")
+            else:
+                print("Something went wrong while I was sending the mail. Please check the error logs sir.")
+
+        elif 'joke' in query:
+            print("Hope you like this one sir")
+            joke = get_random_joke()
+            print(joke)
+            
+        elif "advice" in query:
+            print("Here's an advice for you, sir")
+            advice = get_random_advice()
+            pprint(advice)
+
+        elif "trending movies" in query:
+            openweather_app_id = input("Please signup for OpenWeatherMap API  in https://home.openweathermap.org/users/sign_in and enter the API key -/n")
+            print("Some of the trending movies are: {get_trending_movies()}")
+            print(*get_trending_movies(), sep='\n')
+
+        elif 'news' in query:
+            news_api_key = input("Please signup for NEWSAPI in https://newsapi.org/register and enter the API key -/n")
+            print("I'm reading out the latest news headlines, sir")
+            print(*get_latest_news(), sep='\n')
+
+        elif 'weather' in query:
+            ip_address = find_my_ip()
+            city = requests.get(f"https://ipapi.co/{ip_address}/city/").text
+            print("Getting weather report for your city {city}")
+            weather, temperature, feels_like = get_weather_report(city)
+            print("The current temperature is {temperature}, but it feels like {feels_like}")
+            print("Also, the weather report talks about {weather}")
+            
         else:
             print("Sorry, I could not understand you Sir.")
             query = "None"
-
+        
