@@ -1,6 +1,7 @@
-import utils
+import functions_of.py
+import functions_on.py
 from datetime import datetime
-from functions_of import open_calculator, open_camera, open_cmd, open_notepad
+import pytz
 from info import opening_text, paths
 import random
 
@@ -46,6 +47,10 @@ if __name__ == "__main__":
             open_cmd()
         elif "open notepad" in query:
             open_notepad()
+        elif "time" in query:
+            current_time()
+        elif "timezone" in query:
+            timezone_time()
         elif 'ip address' in query:
             ip_address = find_my_ip()
             print('Your IP Address is {ip_address}')
@@ -63,8 +68,8 @@ if __name__ == "__main__":
 
         elif 'search on google' in query:
             print('What do you want to search on Google, sir?')
-            query = take_user_input().lower()
-            search_on_google(query)
+            question = take_user_input().lower()
+            search_on_google(question)
 
         elif "send whatsapp message" in query:
             number = input("On what number should I send the message sir? /n Enter the number: ")
