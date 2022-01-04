@@ -50,6 +50,7 @@ if __name__ == "__main__":
         elif "time" in query:
             current_time()
         elif "timezone" in query:
+            req_timezone = input("Enter the timezone-/n")
             timezone_time()
         elif 'ip address' in query:
             ip_address = find_my_ip()
