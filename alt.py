@@ -82,7 +82,7 @@ if __name__ == "__main__":
                 "What do you want to search on Wikipedia, sir?\n"
             ).lower()
             results = search_on_wikipedia(search_query)
-            print("According to Wikipedia", str(results))
+            print("According to Wikipedia,", str(results))
 
         elif "youtube" in query:
             video = input("What do you want to play on Youtube, sir?\n").lower()
