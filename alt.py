@@ -1,5 +1,5 @@
-import functions_of.py
-import functions_on.py
+import functions_of
+import functions_on
 from datetime import datetime
 import pytz
 from info import opening_text, paths
