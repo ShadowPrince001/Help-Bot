@@ -1,6 +1,7 @@
 import requests
 import wikipedia
 import pywhatkit as kit
+import pywhatkit
 from email.message import EmailMessage
 import smtplib
 
@@ -24,7 +25,27 @@ def search_on_google(query):
 
 
 def send_whatsapp_message(number, message):
-    kit.sendwhatmsg_instantly(f"+91{number}", message)
+    kit.sendwhatmsg_instantly("+91{number}", message)
+
+
+def open_whatsapp():
+    pywhatkit.open_web()
+    if pywhatkit.open_web() is True:
+        print("Whatsapp Web is opened")
+    else:
+        print("Sorry,there was some issue in opening Whatsapp Web")
+
+
+def take_screenshot():
+    file_name = input("What should I save file as? \n")
+    pywhatkit.take_screenshot(file_name, 2)
+    print("Screenshot is taken and saved as", file_name)
+
+
+def convert_ascci_art(source_path, target_path):
+    source_path = input("Enter path of image")
+    target_path = input("Enter name of ASCII Art")
+    pywhatkit.image_to_ascii_art(source_path, target_path)
 
 
 def send_email(receiver_address, subject, message):
