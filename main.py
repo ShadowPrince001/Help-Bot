@@ -1,4 +1,3 @@
-from Scripts.Jarvis.functions_on import open_whatsapp
 from functions_on import (
     find_my_ip,
     get_latest_news,
@@ -14,6 +13,8 @@ from functions_on import (
     open_whatsapp,
     take_screenshot,
     convert_ascci_art,
+    shutdown,
+    cncl_shutdown,
 )
 from functions_of import (
     open_calculator,
@@ -34,6 +35,7 @@ import pywhatkit
 
 import os
 import subprocess as sp
+
 
 def greet_user():
     """Greets the user according to the time"""
@@ -81,6 +83,12 @@ if __name__ == "__main__":
             ip_address = find_my_ip()
             print("Your IP Address is", str(ip_address))
 
+        elif " shutdown " in query:
+            shutdown()
+
+        elif " cancel shutdown " in query:
+            cncl_shutdown()
+
         elif "wikipedia" in query:
             search_query = input(
                 "What do you want to search on Wikipedia, sir?\n"
@@ -111,7 +119,9 @@ if __name__ == "__main__":
             take_screenshot()
 
         elif "ascii" in query:
-            convert_ascci_art()
+            source_path = input("Enter path of image:")
+            target_path = input("Enter where to save of ASCII Art:")
+            convert_ascci_art(source_path, target_path)
 
         elif "send an email" in query:
             receiver_address = input(
