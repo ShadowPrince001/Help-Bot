@@ -1,9 +1,19 @@
+from os import read
 import requests
 import wikipedia
 import pywhatkit as kit
 import pywhatkit
 from email.message import EmailMessage
 import smtplib
+
+
+def shutdown():
+    cntdwn = input("After How many seconds shall system shutdown? \n")
+    pywhatkit.shutdown(cntdwn)
+
+
+def cncl_shutdown():
+    pywhatkit.cancel_shutdown()
 
 
 def find_my_ip():
@@ -43,9 +53,9 @@ def take_screenshot():
 
 
 def convert_ascci_art(source_path, target_path):
-    source_path = input("Enter path of image")
-    target_path = input("Enter name of ASCII Art")
-    pywhatkit.image_to_ascii_art(source_path, target_path)
+    kit.image_to_ascii_art(source_path, target_path)
+    print("Image converted to ASCII Art and saved as", target_path)
+    
 
 
 def send_email(receiver_address, subject, message):
@@ -113,6 +123,11 @@ def get_random_joke():
     headers = {"Accept": "application/json"}
     res = requests.get("https://icanhazdadjoke.com/", headers=headers).json()
     return res["joke"]
+
+
+def get_random_advice():
+    res = requests.get("https://api.adviceslip.com/advice").json()
+    return res["slip"]["advice"]
 
 
 def get_random_advice():
