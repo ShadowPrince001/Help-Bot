@@ -1,3 +1,4 @@
+from Scripts.Jarvis.functions_on import open_whatsapp
 from functions_on import (
     find_my_ip,
     get_latest_news,
@@ -10,6 +11,9 @@ from functions_on import (
     search_on_wikipedia,
     send_email,
     send_whatsapp_message,
+    open_whatsapp,
+    take_screenshot,
+    convert_ascci_art,
 )
 from functions_of import (
     open_calculator,
@@ -26,10 +30,10 @@ import random
 import requests
 import wikipedia
 import pywhatkit as kit
+import pywhatkit
 
 import os
 import subprocess as sp
-
 
 def greet_user():
     """Greets the user according to the time"""
@@ -92,13 +96,22 @@ if __name__ == "__main__":
             question = input("What do you want to search on Google, sir?\n").lower()
             search_on_google(question)
 
-        elif "send whatsapp message" in query:
+        elif " send whatsapp message " in query:
             number = input(
                 "On what number should I send the message sir? \n Enter the number: "
             )
             message = input("What is the message sir?").lower()
             send_whatsapp_message(number, message)
             print("I've sent the message sir.")
+
+        elif "open whatsapp" in query:
+            open_whatsapp()
+
+        elif "screenshot" in query:
+            take_screenshot()
+
+        elif "ascii" in query:
+            convert_ascci_art()
 
         elif "send an email" in query:
             receiver_address = input(
@@ -145,3 +158,4 @@ if __name__ == "__main__":
         else:
             print("Sorry, I could not understand you Sir.")
             query = "None"
+
