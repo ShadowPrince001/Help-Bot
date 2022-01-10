@@ -67,18 +67,25 @@ if __name__ == "__main__":
     greet_user()
     while True:
         query = " " + take_user_input() + " "
+        
         if "open camera" in query:
             open_camera()
+            
         elif "open calculator" in query:
             open_calculator()
+            
         elif "open command prompt" in query:
             open_cmd()
+            
         elif "open notepad" in query:
             open_notepad()
+            
         elif " time " in query:
             current_time()
+            
         elif " timezone " in query:
             timezone_time()
+            
         elif "ip address" in query:
             ip_address = find_my_ip()
             print("Your IP Address is", str(ip_address))
