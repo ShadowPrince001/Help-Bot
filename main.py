@@ -175,4 +175,3 @@ if __name__ == "__main__":
         else:
             print("Sorry, I could not understand you Sir.")
             query = "None"
-
