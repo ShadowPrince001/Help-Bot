@@ -1,3 +1,4 @@
+#Defining Online Functions
 from os import read
 import requests
 import wikipedia
