@@ -1,3 +1,4 @@
+#Importing online functions
 from functions_on import (
     find_my_ip,
     get_latest_news,
