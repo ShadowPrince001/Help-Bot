@@ -1,5 +1,4 @@
-#Importing online functions
-from functions_on import (
+from tasks import (
     find_my_ip,
     get_latest_news,
     get_random_advice,
@@ -16,8 +15,6 @@ from functions_on import (
     convert_ascci_art,
     shutdown,
     cncl_shutdown,
-)
-from functions_of import (
     open_calculator,
     open_camera,
     open_cmd,
@@ -25,18 +22,6 @@ from functions_of import (
     current_time,
     timezone_time,
 )
-from datetime import datetime
-import pytz
-from info import opening_text, paths
-import random
-import requests
-import wikipedia
-import pywhatkit as kit
-import pywhatkit
-
-import os
-import subprocess as sp
-
 
 def greet_user():
     """Greets the user according to the time"""
